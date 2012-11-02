@@ -1,0 +1,58 @@
+<div class="white_dh">
+  <div class="daohang" style="top: 0px; margin-top: 0px;">
+    <div class="h_left"></div>
+    <div class="h_center">
+      <div class="zhe_hd">
+        <div class="zhe_dao">
+          <h3>很便宜：</h3>
+          <ul>
+            <% @category.each do |category| %>
+            <% if @type==category.id %>
+                <li class="current">
+            <% else %>
+                <li>
+            <% end %>
+
+              <a href="<%= '/home/'+category.mark %>">
+                <i class="<%= category.mark %>"></i>
+                <span><%= category.name %></span>
+              </a>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+
+      </div>
+      <div class="zhe_show" jsdate="2012910" jsclass="all">
+        <div class="type_show">
+		    <span>
+			  所有宝贝：
+            </span>
+        </div>
+        <div class="type_detail">
+          共
+          <a><%= @all_count%></a>
+          个宝贝，
+          <!--优质爆款-->
+          <!--<a class="youzhi" href="/home/alltype">6</a>-->
+          <!--个；-->
+          今日上新
+          <a class="new_goods" href="/home/alltype"><%= @today_count%>
+            <em class="new_em"></em>
+          </a>
+          个
+          <!--<span class="gray_pre">-->
+            <!--(您还有<a href="/home/alltype-->
+            <!--" class="no_see">1</a>个未浏览)-->
+          <!--</span>-->
+        </div>
+        <!--<div class="type_page">-->
+          <!--<span class="normal"><em></em>上一页</span>-->
+          <!--<a class="pg_next" href="http://www.jiukuaiyou.com/jiu/all/whole/new/all/2">-->
+          <!--<span>下一页</span><em></em></a>						-->
+        <!--</div>-->
+      </div>
+    </div>
+    <div class="h_right"></div>
+  </div>
+</div>

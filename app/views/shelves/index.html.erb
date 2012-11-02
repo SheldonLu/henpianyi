@@ -1,0 +1,79 @@
+  <% content_for :styles do %>
+      <%= stylesheet_link_tag "shelf"   %>
+  <% end %>
+  <% content_for :scripts do %>
+      <%= javascript_include_tag "shelves"   %>
+  <% end %>
+<h1>Listing shelves</h1>
+<div style="float: right;">
+  <% if admin_signed_in? %>
+      <%= link_to '登出' ,destroy_admin_session_path,:method => :delete %>
+  <% end %>
+</div>
+
+<table>
+  <tr>
+    <th><%= t("activerecord.attributes.shelf.small_title") %></th>
+    <th style="width: 80px;"><%= t("activerecord.attributes.shelf.title") %></th>
+    <th><%= t("activerecord.attributes.shelf.pic") %></th>
+    <th><%= t("activerecord.attributes.shelf.description") %></th>
+    <th><%= t("activerecord.attributes.shelf.price") %></th>
+    <th><%= t("activerecord.attributes.shelf.old_price") %></th>
+    <!--<th>Link to</th>-->
+    <th><%= t("activerecord.attributes.shelf.state") %></th>
+    <th><%= t("activerecord.attributes.shelf.position") %></th>
+    <th><%= t("activerecord.attributes.shelf.category") %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% if can? :read ,@shelves %>
+    <% @shelves.each do |shelf| %>
+      <tr>
+        <td><%= shelf.small_title %>    <textarea id="textarea"></textarea> </td>
+        <td><%= shelf.title %></td>
+        <td><%= image_tag (pic_to_normal(shelf.pic)) %></td>
+        <td><%= shelf.description %></td>
+        <td><%= shelf.price %></td>
+        <td><%= shelf.old_price %></td>
+        <!--<td><%= shelf.link_to %></td>-->
+        <td><%= shelf.state %></td>
+        <td><%= shelf.position %></td>
+        <td><%= shelf.category.name %></td>
+        <td>
+          <% if can? :read ,shelf %>
+              <%= link_to t('scaffold.show'), shelf %>
+          <% end %>
+         </td>
+
+        <td>
+          <% if can? :update ,shelf %>
+              <%= link_to t('scaffold.edit'), edit_shelf_path(shelf) %>
+          <% end %>
+
+        </td>
+        <td>
+          <% if can? :destroy,shelf %>
+              <%= link_to t('scaffold.destroy'), shelf, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+         </td>
+      </tr>
+    <% end %>
+<% end %>
+</table>
+<div class='div_center'><%= will_paginate (@shelves) %></div>
+<br />
+<% if can? :create,@shelves %>
+    <%= link_to t('helpers.submit.shelf.create',:model=>t('activerecord.models.shelf')), new_shelf_path %>
+
+    <p>
+    <% unless params[:state] %>
+      <%= link_to '已下架' , shelves_path(:state=>-1) %>
+    <% else %>  
+       <%= link_to '上架' , shelves_path %>
+    <% end  %>
+    </p>
+    
+<% end %>
+
+  

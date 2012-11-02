@@ -1,0 +1,20 @@
+<%= simple_form_for(@shelf) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :small_title %>
+    <%= f.input :title %>
+    <%= f.input :pic ,:as => :file %>
+    <%= f.input :description %>
+    <%= f.input :price,:as=>:string %>
+    <%= f.input :old_price %>
+    <%= f.input :link_to %>
+   <!-- <%= f.input :state %>-->
+    <%= f.input :position ,:placeholder=>'创建时无需填写，编辑时可以修改位置',:as=>:string  %>
+    <%= f.association :category ,:prompt => "选择类别"%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

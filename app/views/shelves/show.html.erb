@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>  Small title:</b>
+  <%= @shelf.small_title %>  
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @shelf.title %>
+</p>
+
+<p>
+  <b>Pic:</b>
+  <%= image_tag (pic_to_normal(@shelf.pic)) %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @shelf.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @shelf.price %>
+</p>
+
+<p>
+  <b>Old price:</b>
+  <%= @shelf.old_price %>
+</p>
+
+<p>
+  <b>Link to:</b>
+  <%= @shelf.link_to %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @shelf.state %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @shelf.position %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @shelf.category_id %>
+</p>
+
+
+<%= link_to t('scaffold.edit'), edit_shelf_path(@shelf) %> |
+<%= link_to t('scaffold.back'), shelves_path %>

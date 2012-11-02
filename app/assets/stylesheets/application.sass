@@ -1,0 +1,138 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery.atwho
+ */
+@import bootstrap
+body
+  color: #5E5E5E
+  font-size: 12px
+  background: url(background_bg.png)
+.main
+  width: 950px
+  margin: 0 auto
+  overflow: hidden
+
+.header
+  background: url(top_bg.jpg) repeat-x right top transparent
+  height: 133px
+  width: 100%
+  padding-bottom: 0px
+  margin: 0 0
+
+.logo
+  height: 83px
+  margin: 0 auto
+  padding-top: 10px
+  width: 950px
+  h1
+    float: left
+    padding-top: 19px
+    a
+      background: url("global_logo.gif") repeat scroll 0 0 transparent
+      display: block
+      height: 43px
+      width: 237px
+
+
+.baiban
+  a
+    background: url("baiban.png") no-repeat scroll 0 0 transparent
+    display: block
+    float: left
+    height: 81px
+    margin-left: 70px
+    width: 286px
+
+.search_box
+  float: right
+  height: 26px
+  line-height: 26px
+  margin-top: 30px
+  .text
+    background: url("search_left.gif") no-repeat scroll 0 0 transparent
+    border: 0 none
+    color: #999999
+    float: left
+    height: 26px
+    line-height: 26px
+    outline: 0 none
+    padding-left: 28px
+    width: 166px !important
+  .btn
+    background: url("search_right.gif") no-repeat scroll 0 0 transparent
+    border: 0 none
+    cursor: pointer
+    float: left
+    height: 26px
+    line-height: 26px
+    outline: 0 none
+    width: 66px
+
+
+
+.nav
+  background: none repeat scroll 0 0 transparent
+  height: 36px
+  margin: 0 auto
+  position: relative
+  z-index: 10000
+  top: 75px
+  .mask
+    height: 36px
+    margin: 0 auto
+  .navigation
+    font-size: 0
+    height: 36px
+    left: 44%
+    margin-left: -475px
+    position: absolute
+    top: 0
+    width: 950px
+  ul
+    display: block
+    list-style-type: disc
+    -webkit-margin-before: 1em
+    -webkit-margin-after: 1em
+    -webkit-margin-start: 0px
+    -webkit-margin-end: 0px
+    -webkit-padding-start: 40px
+    li
+      background: url(line_cur.png) no-repeat right
+      float: left
+      font-size: 0
+      height: 100%
+      position: relative
+      entrance
+        float: right
+        height: 100%
+        padding-right: 2px
+      .current
+        background: none repeat scroll 0 0 transparent
+        padding-right: 2px
+      a
+        color: #FFF
+        float: left
+        font-size: 14px
+        font-weight: bold
+        height: 36px
+        line-height: 36px
+        padding: 0 18px
+        position: relative
+        text-align: center
+        z-index: 2
+
+
+
+
+
+
+

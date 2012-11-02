@@ -1,0 +1,49 @@
+<div class="zhe_bd">
+    <ul class="clearfix" id="ulheight">
+    <% count=0 %>
+    <% @shelves.each do |shelf| %>
+          <% count=count+1 %>
+          
+          <% if count==1 %>
+              <li class="goods_box goods_box_l">
+          <% else %>
+              <% if count==3 %>
+                  <% count=0 %>
+              <% end %>
+              <li class="goods_box">
+          <% end %>
+
+            <div class="inner_box tag_buy">
+              <h3>
+                <span class="green">
+                  <%= shelf.small_title %>
+                </span>
+                <a class="inform_title" href="/home/<%= to_local_path(shelf.link_to,shelf.id)%>/to_other" target="_blank">
+                  <%= shelf.title%>
+                </a>
+              </h3>
+
+              <div class="pic">
+                <a href="/home/<%= to_local_path(shelf.link_to,shelf.id)%>/to_other" target="_blank">
+                  <img alt="<%= shelf.small_title %>" src=" <%=  pic_to_normal(shelf.pic) %>">
+                </a>
+              </div>
+              <div class="buy_mask"></div>
+              <div class="buy_state clearfix">
+                <span class="begin_time">原价:<span class="oldprice_2">¥<%= money_float(shelf.old_price) %></span></span>
+              </div>
+              <a target="_blank" href="/home/<%= to_local_path(shelf.link_to,shelf.id)%>/to_other" class="buy_action clearfix">
+                <span class="price">
+                  <em>¥</em>
+                  <%= money_integer(shelf.price) %><span>.<%=   money_decimal(shelf.price) %></span>
+                </span>
+                  <!--<span class="oldprice_1">¥<%#= money_float(shelf.old_price) %></span>-->
+                <b class="btn"></b>
+              </a>
+            </div>
+            <div class="li_bg"></div>
+          </li>
+    <% end %>
+    </ul>
+</div>
+<div class='div_center'><%= will_paginate (@shelves) %></div>
