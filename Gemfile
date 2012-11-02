@@ -10,6 +10,7 @@ gem 'sqlite3'
 
 # gems used only for assets and not required
 # in production environments by default.
+gem 'sass-rails',   '~> 3.2.3'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -42,7 +43,7 @@ gem 'mini_magick','3.3', :require => false
 # gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
+#gem 'debugger'
 gem 'cancan'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
