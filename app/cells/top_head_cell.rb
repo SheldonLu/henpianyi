@@ -1,6 +1,6 @@
 class TopHeadCell < Cell::Rails
 
-  cache :top , :expires_in => 1.days
+  # cache :top , :expires_in => 1.days
   def top
     render
   end

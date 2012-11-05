@@ -1,6 +1,6 @@
 require 'redis/value'
 class HomeController < ApplicationController
-  caches_page :alltype,:fushi,:shishang,:xiebao,:jujia,:qita,:meishi , :expires_in => 10.days
+  # caches_page :alltype,:fushi,:shishang,:xiebao,:jujia,:qita,:meishi , :expires_in => 10.days
   def alltype
     @type=Category.find_by_mark('alltype').id
     respond_to do |format|
