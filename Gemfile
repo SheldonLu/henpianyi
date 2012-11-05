@@ -43,7 +43,7 @@ gem 'mini_magick','3.3', :require => false
 # gem 'capistrano'
 
 # To use debugger
-#gem 'debugger'
+gem 'debugger'
 gem 'cancan'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'

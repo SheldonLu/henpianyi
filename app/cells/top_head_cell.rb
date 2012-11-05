@@ -9,7 +9,7 @@ class TopHeadCell < Cell::Rails
   def main_head (args)
     @type=args[:type]
     @category=Category.all
-
+    # debugger
     category=Category.find(args[:type])
 
     t = Time.now
